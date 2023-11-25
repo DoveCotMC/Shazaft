@@ -11,6 +11,11 @@
   "contact": {
     "sources": "https://github.com/DoveCotMC/Shazaft"
   },
+  "entrypoints": {
+    "client": [
+      "team.dovecotmc.shazaft.ShazaftClient"
+    ]
+  },
   "license": "Nova-Relay-License-1.0",
   "environment": "client",
   "mixins": [
