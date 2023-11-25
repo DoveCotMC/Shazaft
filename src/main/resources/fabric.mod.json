@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "shazaft",
+  "version": "${version}",
+  "name": "Shazaft",
+  "description": "Displays the music being played in the lower left corner of the pause screen",
+  "authors": [
+    "Radekemia",
+    "Tapio"
+  ],
+  "contact": {
+    "sources": "https://github.com/DoveCotMC/Shazaft"
+  },
+  "license": "Nova-Relay-License-1.0",
+  "environment": "client",
+  "mixins": [
+    "shazaft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "*"
+  }
+}
