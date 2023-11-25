@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "team.dovecotmc.shazaft.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "shazaft.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+    "AccessorMusicManager",
+    "MixinPauseScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
