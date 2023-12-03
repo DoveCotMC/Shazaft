@@ -12,8 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import team.dovecotmc.shazaft.util.Utilities;
 
-import java.awt.*;
-
 import static team.dovecotmc.shazaft.config.ShazaftConfig.*;
 
 @Mixin(PauseScreen.class)
@@ -32,9 +30,15 @@ public abstract class MixinPauseScreen extends Screen {
         final int h = (int) (this.height * pause_height_coefficient_screen_height.get() +
                 pause_height_constant.get());
         if (pause_centered.get())
-            guiGraphics.drawCenteredString(this.font, Component.translatable("record.nowPlaying",
-                    Utilities.getMusicName(sound.getSound().getLocation().toString())), w, h, pause_color.get());
-        else guiGraphics.drawString(this.font, Component.translatable("record.nowPlaying",
-                Utilities.getMusicName(sound.getSound().getLocation().toString())), w, h, Color.CYAN.getRGB());
+            guiGraphics.drawCenteredString(
+                    this.font,
+                    Utilities.getNowPlaying(sound.getSound().getLocation().toString()),
+                    w, h, pause_now_color.get()
+            );
+        else guiGraphics.drawString(
+                this.font,
+                Utilities.getNowPlaying(sound.getSound().getLocation().toString()),
+                w, h, pause_now_color.get()
+        );
     }
 }

@@ -12,8 +12,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import team.dovecotmc.shazaft.util.Utilities;
 
-import java.awt.*;
-
 import static team.dovecotmc.shazaft.config.ShazaftConfig.*;
 
 @Mixin(TitleScreen.class)
@@ -32,9 +30,13 @@ public abstract class MixinTitleScreen extends Screen {
         final int h = (int) (this.height * title_height_coefficient_screen_height.get() +
                 title_height_constant.get());
         if (title_centered.get())
-            guiGraphics.drawCenteredString(this.font, Component.translatable("record.nowPlaying",
-                    Utilities.getMusicName(sound.getSound().getLocation().toString())), w, h, title_color.get());
-        else guiGraphics.drawString(this.font, Component.translatable("record.nowPlaying",
-                Utilities.getMusicName(sound.getSound().getLocation().toString())), w, h, Color.CYAN.getRGB());
+            guiGraphics.drawCenteredString(
+                    this.font,
+                    Utilities.getNowPlaying(sound.getSound().getLocation().toString()),
+                    w, h, title_now_color.get());
+        else guiGraphics.drawString(
+                this.font,
+                Utilities.getNowPlaying(sound.getSound().getLocation().toString()),
+                w, h, title_now_color.get());
     }
 }

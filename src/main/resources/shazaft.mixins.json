@@ -4,12 +4,14 @@
   "package": "team.dovecotmc.shazaft.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "shazaft.refmap.json",
-  "mixins": [
-  ],
   "client": [
     "AccessorMusicManager",
+    "AccessorRecordItem",
+    "MixinLevelRenderer",
+    "MixinMinecraft",
     "MixinPauseScreen",
-    "MixinTitleScreen"
+    "MixinTitleScreen",
+    "MixinToastInstance"
   ],
   "injectors": {
     "defaultRequire": 1
