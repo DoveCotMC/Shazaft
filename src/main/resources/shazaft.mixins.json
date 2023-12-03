@@ -8,7 +8,8 @@
   ],
   "client": [
     "AccessorMusicManager",
-    "MixinPauseScreen"
+    "MixinPauseScreen",
+    "MixinTitleScreen"
   ],
   "injectors": {
     "defaultRequire": 1
